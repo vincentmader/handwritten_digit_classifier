@@ -7,6 +7,8 @@ from tqdm import tqdm
 from net import Net
 from get_dataset import main as get_dataset
 
+from config import PATH_TO_SAVE_NETWORK
+
 
 def main():
 
@@ -41,7 +43,9 @@ def main():
                 total += 1
 
     print('Accuracy:', round(correct / total, 3))  # ~0.97, great accuracy!
-    torch.save(net, 'handwritten_digit_classifier')
+    torch.save(
+        net, os.path.join(PATH_TO_SAVE_NETWORK, 'handwritten_digit_classifier')
+    )
 
 
 if __name__ == "__main__":
