@@ -29,8 +29,6 @@ def main():
             loss.backward()  # magical
             optimizer.step()  # adjust weights
 
-        print(f'Epoch {epoch}: loss = {loss}\n')
-
     # evaluation
     correct, total = 0, 0
     with torch.no_grad():  # don't train on out_of_sample data
